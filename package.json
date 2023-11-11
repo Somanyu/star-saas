@@ -16,9 +16,11 @@
     "@supabase/supabase-js": "^2.38.4",
     "framer-motion": "^10.16.4",
     "next": "14.0.2",
+    "next-themes": "^0.2.1",
     "raw-body": "^2.5.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^4.11.0",
     "react-player": "^2.13.0",
     "sharp": "^0.32.6",
     "stripe": "^14.4.0"
