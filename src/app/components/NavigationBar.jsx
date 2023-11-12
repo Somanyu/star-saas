@@ -18,7 +18,7 @@ export default function NavigationBar() {
 
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <Button as={Link} className="dark:text-slate-50 text-black" color="primary" href="#" variant="bordered">
+                    <Button as={Link} className="dark:text-slate-50 text-black" color="primary" href="/pricing" variant="bordered">
                         Pricing
                     </Button>
                 </NavbarItem>
