@@ -13,7 +13,7 @@ const Success = () => {
                         </svg>
                         <h1 className="text-4xl font-bold">Success !</h1>
                         <p className="text-center mb-10">Thank you for your interest! Check your email for a link to the guide.</p>
-                        <Button className="mt-24" as={Link} href="/products" color="success" variant="solid" startContent={<HiOutlineArrowNarrowLeft />}>
+                        <Button className="mt-24" as={Link} href="/login" color="success" variant="solid" startContent={<HiOutlineArrowNarrowLeft />}>
                             Login to get started
                         </Button>
                     </div>

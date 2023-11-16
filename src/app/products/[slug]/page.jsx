@@ -2,7 +2,9 @@ import { Button, Image } from "@nextui-org/react";
 import { HiBadgeCheck } from "react-icons/hi";
 import { supabase } from "../../../../supabase";
 
+
 const ProductPage = async ({ params }) => {
+
     const slug = params.slug;
 
     let { data: product, error } = await supabase
@@ -10,6 +12,8 @@ const ProductPage = async ({ params }) => {
         .select("*")
         .eq('slug', slug)
         .single();
+
+
 
 
     return (
@@ -46,17 +50,19 @@ const ProductPage = async ({ params }) => {
                         </div>
                     </div>
 
+
+
                     {/* Product form */}
                     <div className="mt-10 lg:max-w-lg lg:col-start-1 lg:row-start-2 lg:self-start">
                         <section aria-labelledby="options-heading">
                             <h2 id="options-heading" className="sr-only">
                                 Product options
                             </h2>
-
+                            {/* as={Link} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" */}
                             <form>
                                 <div className="mt-10">
-                                    <Button color="primary" className="w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white  focus:outline-none focus:ring-2 focus:ring-offset-2">
-                                        Purchase
+                                    <Button color="primary" className="w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white">
+                                        Buy a plan
                                     </Button>
                                 </div>
                                 <div className="mt-6 text-center">
