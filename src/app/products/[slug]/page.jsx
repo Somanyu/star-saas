@@ -1,6 +1,9 @@
 import { Button, Image } from "@nextui-org/react";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 import { HiBadgeCheck } from "react-icons/hi";
 import { supabase } from "../../../../supabase";
+import Link from "next/link";
 
 
 const ProductPage = async ({ params }) => {
@@ -14,6 +17,14 @@ const ProductPage = async ({ params }) => {
         .single();
 
 
+
+    const supabaseClient = createServerComponentClient({ cookies })
+
+    const {
+        data: { session },
+    } = await supabaseClient.auth.getSession()
+
+    console.log("🚀 ~ file: page.jsx:23 ~ ProductPage ~ session:", session)
 
 
     return (
@@ -61,9 +72,17 @@ const ProductPage = async ({ params }) => {
                             {/* as={Link} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" */}
                             <form>
                                 <div className="mt-10">
-                                    <Button color="primary" className="w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white">
-                                        Buy a plan
-                                    </Button>
+                                    {session ?
+                                        <>
+                                            <Button as={Link} href="/members" color="success" className="w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white">
+                                               Go to course
+                                            </Button>
+                                        </> :
+                                        <>
+                                            <Button color="primary" className="w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white">
+                                                Buy a plan
+                                            </Button>
+                                        </>}
                                 </div>
                                 <div className="mt-6 text-center">
                                     <a href="#" className="group inline-flex text-base font-medium">

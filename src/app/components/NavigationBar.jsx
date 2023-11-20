@@ -14,7 +14,8 @@ export default function NavigationBar({ session }) {
 
     const handleSignOut = async () => {
         await supabase.auth.signOut()
-        redirect('/')
+        // redirect('/')
+        window.location.reload()
     }
 
     const onManageBilling = async () => {
